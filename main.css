@@ -155,7 +155,7 @@ button a:hover:not(.active) {
     color: #35b997;
 }
 
-button:active {
+.active {
     background-color: #35b997;
     color: white;
 }
