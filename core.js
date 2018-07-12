@@ -44,7 +44,7 @@ function pageChange() {
 	switch (section) {
 	case "#home":
 		loadDoc("index_roll");
-		
+		document.getElementById("i_home").setAttribute("class", "active");
 		break;
 	case "#projects":
 		loadDoc("projects");
