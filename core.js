@@ -33,3 +33,7 @@ function includeHTML() {
     }
   }
 }
+
+function changePage(page) {
+	alert(page);
+}
