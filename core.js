@@ -34,13 +34,13 @@ function includeHTML() {
   }
 }
 
-function loadDoc(file_name) {
+function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
      document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", file_name + ".html", true);
+  xhttp.open("GET", "projects.html", true);
   xhttp.send();
 }
