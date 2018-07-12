@@ -45,6 +45,7 @@ function pageChange() {
 	case "#home":
 		loadDoc("index_roll");
 		document.getElementById("i_home").setAttribute("class", "active");
+		alert(document.getElementById("loading").className)
 		break;
 	case "#projects":
 		loadDoc("projects");
