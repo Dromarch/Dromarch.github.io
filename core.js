@@ -35,5 +35,5 @@ function includeHTML() {
 }
 
 function changePage() {
-	alert("I am an alert box!");
+	alert("Só testando se isso funciona no Github!!");
 }
