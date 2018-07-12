@@ -133,7 +133,8 @@ li {
     float: left;
 }
 
-li a {
+.lia {
+    float: left;
 	width: 90px;
 	line-height: 45px;
     display: block;
