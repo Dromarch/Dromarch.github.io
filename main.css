@@ -22,13 +22,6 @@ hr.z {
     border-width: 1px;
 }
 
-hr.v {
-	margin: 10px 5px;
-	width: 0.1px;
-    height: 145vh; 
-    display: inline-block;
-}
-
 .center {
     margin: auto;
     text-align: center;
@@ -93,18 +86,25 @@ hr.v {
 	background-color: white;
 }
 .left_roll {
-	width: 63%;
+	width: 70%;
 	height: auto;
 	padding: 5px;
 	background-color: white;
 	float: left;
 }
 .right_roll{
-	width: 35%;
+	width: 28%;
 	height: auto;
 	background-color: white;
 	font-size: 25;
     float: right;
+}
+.vrl {
+	margin: 10px 5px;
+	width: 2px;
+    height: 80%; 
+    background-color: black;
+    float: left;
 }
 
 .clear:after {
@@ -134,7 +134,7 @@ li {
 }
 
 li a {
-	width: 75px;
+	width: 90px;
 	line-height: 45px;
     display: block;
     color: #102232;
@@ -149,11 +149,12 @@ li a {
 
 li a:hover:not(.active) {
     background-color: #f1f1f1;
-    color: #24ca85;
+    color: #35b997;
 }
 
 .active {
-    background-color: #24ca85;
+    background-color: #35b997;
+    color: white;
 }
 
 .zoom {
