@@ -130,6 +130,7 @@ ul {
 }
 
 button {
+    padding: 0px;
     border: none;
     float: left;
 }
@@ -154,7 +155,7 @@ button a:hover:not(.active) {
     color: #35b997;
 }
 
-.active {
+button:active {
     background-color: #35b997;
     color: white;
 }
