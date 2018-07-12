@@ -18,7 +18,7 @@
 		<div class="right_header">
 			<ul>
 				<li class="active"><a href="#home">início</a></li>
-				<li><a href="#projects" onclick="changePage()">projetos</a></li>
+				<li><a href="#projects" onclick="loadDoc(projects)">projetos</a></li>
 				<li><a href="test.html">códigos</a></li>
 				<li><a href="#contact">sobre</a></li>
 				<li><a href="#contact">contato</a></li>
@@ -29,8 +29,9 @@
 
 
 	<div class="main_roll">
-
-			<div es-include-html="left_roll.html"></div>
+			<div id="demo">
+				<div es-include-html="left_roll.html"></div>
+			</div>
 			<div class="vrl"></div>
 			<div es-include-html="right_roll.html"></div>
 
