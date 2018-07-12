@@ -41,9 +41,6 @@ const urls = {	"home", "projects"
 };
 
 function pageChange() {
-	switch urls
-	case urls
-		
 	if(document.URL.indexOf("#projects") != -1) {
 		loadDoc("projects")
 	} else {
