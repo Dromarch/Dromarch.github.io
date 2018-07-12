@@ -38,10 +38,16 @@ function loadDoc(page_name) {
 }
 
 function pageChange() {
-	if(document.URL.indexOf("#projects") != -1) {
-		loadDoc("projects")
-	} else {
-		var url = document.URL
-		alert(url.substr(url.lastIndexOf('/') + 1));
-	};
+	var url = document.URL
+	var section = url.substr(url.lastIndexOf('/') + 1
+
+	switch (section) {
+	case "#home":
+		loadDoc("index_roll");
+		break;
+	case "projects":
+		loadDoc("projects");
+		break;
+	}
+
 }
