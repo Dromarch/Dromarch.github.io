@@ -45,7 +45,7 @@ function pageChange() {
 
 	switch (section) {
 	case "#home":
-		loadDoc("index_roll");
+		loadDoc("home");
 		break;
 	case "#projects":
 		loadDoc("projects");
