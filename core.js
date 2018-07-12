@@ -37,11 +37,11 @@ function loadDoc(page_name) {
   xhttp.send();
 }
 
-
 function pageChange() {
 	if(document.URL.indexOf("#projects") != -1) {
 		loadDoc("projects")
 	} else {
-
+		var url = document.URL
+		alert(url.substr(url.lastIndexOf('/') + 1));
 	};
 }
