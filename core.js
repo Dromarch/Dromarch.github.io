@@ -37,7 +37,8 @@ function loadDoc(page_name) {
   xhttp.send();
 }
 
-
+const urls = {	"home", "projects" 
+};
 
 function pageChange() {
 	if(document.URL.indexOf("#projects") != -1) {

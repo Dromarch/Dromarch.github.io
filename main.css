@@ -95,7 +95,7 @@ hr.z {
 .right_roll{
 	width: 28%;
 	height: auto;
-	background-color: white;
+	background-color: red;
 	font-size: 25;
     float: right;
 }
