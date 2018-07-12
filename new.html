@@ -1,0 +1,77 @@
+<head>
+
+	<link rel="stylesheet" href="main.css">
+
+	<div class="first_index">
+		<title>Esteem System</title>
+	</div>
+
+</head>
+<div class="main_wrap">
+    <header>Header</header>
+    <div class="wrapper clear">
+        <div class="floated_left">
+            This<br />
+            is<br />
+            just<br />
+            a<br />
+            left<br />
+            floated<br />
+            column<br />
+        </div>
+        <div class="floated_right">
+            This<br />
+            is<br />
+            just<br />
+            a<br />
+            right<br />
+            floated<br />
+            column<br />
+        </div>
+    </div>
+    <footer>Footer</footer>
+</div>
+<style>
+* {
+    -moz-box-sizing: border-box;       /* Just for demo purpose */
+    -webkkit-box-sizing: border-box;   /* Just for demo purpose */
+    box-sizing: border-box;            /* Just for demo purpose */
+    margin: 0;
+    padding: 0;
+}
+
+.main_wrap {
+    margin: 20px;
+    border: 3px solid black;
+    width: 520px;
+}
+
+header, footer {
+    height: 50px;
+    border: 3px solid silver;
+    text-align: center;
+    line-height: 50px;
+}
+
+.wrapper {
+    border: 3px solid green;
+}
+
+.floated_left {
+    float: left;
+    width: 200px;
+    border: 3px solid red;
+}
+
+.floated_right {
+    float: right;
+    width: 300px;
+    border: 3px solid red;
+}
+
+.clear:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+</style>

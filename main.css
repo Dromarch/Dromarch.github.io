@@ -23,11 +23,10 @@ hr.z {
 }
 
 hr.v {
-	margin: 4.5% 64%; 
+	margin: 10px 5px;
 	width: 0.1px;
-    height: 80%; 
+    height: 145vh; 
     display: inline-block;
-    position: absolute;
 }
 
 .center {
@@ -87,42 +86,31 @@ hr.v {
 
 .main_roll {
     margin: 5% auto;
-	width: 90%;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-
-	position: relative;
-	background-color: white;
-
+	width: 85%;
+	height: auto;
 	font-family: "MyriadPro";
 	font-size: 18;
+	background-color: white;
 }
-
-.contents_div {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    padding: 0px 15px;
-}
-
 .left_roll {
-	width: 60%;
-	height: 100%;
-	position: absolute;
-	background-color: white;
-	display: inline-block;
+	width: 63%;
+	height: auto;
+	padding: 5px;
+	background-color: red;
+	float: left;
+}
+.right_roll{
+	width: 35%;
+	height: auto;
+	background-color: red;
+	font-size: 25;
+    float: right;
 }
 
-.right_roll{
-	width: 30%;
-	height: 100%;
-	margin: 0px 65%;
-	position: absolute;
-	display: inline-block;
-	background-color: white;
-
-	font-size: 25;
+.clear:after {
+    clear: both;
+    content: "";
+    display: table;
 }
 
 p.text {
