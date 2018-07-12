@@ -36,7 +36,7 @@ function loadDoc(page_name) {
   xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
   id = "i_" + page_name
-
+  document.getElementById(id).setAttribute("class", "active");
 }
 
 function pageChange() {
