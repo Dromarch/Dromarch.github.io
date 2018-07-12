@@ -129,7 +129,7 @@ ul {
     background-color: white;
 }
 
-li {
+button {
     float: left;
 }
 
@@ -148,7 +148,7 @@ button a {
     transition: all .30s;
 }
 
-li a:hover:not(.active) {
+button a:hover:not(.active) {
     background-color: #f1f1f1;
     color: #35b997;
 }
