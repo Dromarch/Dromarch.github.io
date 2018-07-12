@@ -130,6 +130,7 @@ ul {
 }
 
 button {
+    border: none;
     float: left;
 }
 
