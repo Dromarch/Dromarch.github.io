@@ -35,6 +35,8 @@ function loadDoc(page_name) {
   };
   xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
+  id = "i_" + page_name
+
 }
 
 function pageChange() {
@@ -44,11 +46,9 @@ function pageChange() {
 	switch (section) {
 	case "#home":
 		loadDoc("index_roll");
-		document.getElementById("i_home").setAttribute("class", "active");
 		break;
 	case "#projects":
 		loadDoc("projects");
-		document.getElementById("i_projects").setAttribute("class", "active");
 		break;
 	}
 
