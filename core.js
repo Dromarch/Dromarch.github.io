@@ -34,6 +34,6 @@ function includeHTML() {
   }
 }
 
-function changePage(page) {
-	alert(page);
+function changePage() {
+	alert("I am an alert box!");
 }
