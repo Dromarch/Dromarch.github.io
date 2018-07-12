@@ -38,7 +38,7 @@ function loadDoc(page_name) {
 }
 
 function pageChange() {
-	if(document.URL.indexOf("#projects") != -1) {
+	if(document.URL.indexOf("projects") != -1) {
 		loadDoc("projects")
 	} else {
 		alert("nohaves	")
