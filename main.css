@@ -75,7 +75,9 @@ hr.v {
 .main_roll {
     margin: 5% auto;
 	width: 90%;
-	height: 85%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 
 	position: relative;
 	background-color: white;
