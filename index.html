@@ -17,8 +17,8 @@
 		</div>
 		<div class="right_header">
 			<ul>
-				<button  class="li"><a href="#home" onclick="loadDoc()">inicio</a></li>
-				<button  class="li"><a href="#projects" onclick="loadDoc()">projetos</a></li>
+				<button  class="li"><a href="#home" onclick="loadDoc(index_roll)">inicio</a></li>
+				<button  class="li"><a href="#projects" onclick="loadDoc(projects)">projetos</a></li>
 				<li><a href="#codes">códigos</a></li>
 				<li><a href="#contact">sobre</a></li>
 				<li><a href="#contact">contato</a></li>
@@ -30,7 +30,7 @@
 
 	<div class="main_roll">
 			<div id="demo">
-				<div es-include-html="left_roll.html"></div>
+				<div es-include-html="index_roll.html"></div>
 			</div>
 			<div class="vrl"></div>
 			<div es-include-html="right_roll.html"></div>
@@ -47,5 +47,6 @@
 
 <script>
 pageChange();
+includeHTML();
 </script>
 </body>

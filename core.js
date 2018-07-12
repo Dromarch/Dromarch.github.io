@@ -26,21 +26,23 @@ function includeHTML() {
   }
 }
 
-function loadDoc() {
+function loadDoc(page_name) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
      document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "projects.html", true);
+  xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
 }
 
 function pageChange() {
 	if(document.URL.indexOf("#projects") != -1) {
-   	 includeHTML();
+		loadDoc("projects")
 	} else {
-   	 alert("no have");
+		url = window.alert(this.href.substr(this.href.lastIndexOf('/') + 1));
+		alert(url);
+		alert("test");
 	};
 }
