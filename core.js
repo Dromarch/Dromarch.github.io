@@ -39,7 +39,7 @@ function loadDoc() {
 
 function pageChange() {
 	if(document.URL.indexOf("#projects") != -1) {
-   	 alert("Have");
+   	 includeHTML();
 	} else {
    	 alert("no have");
 	};
