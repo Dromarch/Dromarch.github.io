@@ -96,13 +96,13 @@ hr.v {
 	width: 63%;
 	height: auto;
 	padding: 5px;
-	background-color: red;
+	background-color: white;
 	float: left;
 }
 .right_roll{
 	width: 35%;
 	height: auto;
-	background-color: red;
+	background-color: white;
 	font-size: 25;
     float: right;
 }
