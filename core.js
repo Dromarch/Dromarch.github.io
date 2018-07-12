@@ -39,13 +39,13 @@ function loadDoc(page_name) {
 
 function pageChange() {
 	var url = document.URL
-	var section = url.substr(url.lastIndexOf('/') + 1
+	var section = url.substr(url.lastIndexOf('/') + 1);
 
 	switch (section) {
 	case "#home":
 		loadDoc("index_roll");
 		break;
-	case "projects":
+	case "#projects":
 		loadDoc("projects");
 		break;
 	}
