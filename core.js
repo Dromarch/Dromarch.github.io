@@ -41,8 +41,6 @@ function pageChange() {
 	if(document.URL.indexOf("#projects") != -1) {
 		loadDoc("projects")
 	} else {
-		url = window.alert(this.href.substr(this.href.lastIndexOf('/') + 1));
-		alert(url);
-		alert("test");
+		alert("nohave")
 	};
 }
