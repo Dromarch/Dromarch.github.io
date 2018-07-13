@@ -41,7 +41,7 @@ function loadDoc(page_name) {
   	if (divs[i].id != id){
 	  	divs[i].className = "li";
   	} else {
-  		document.getElementById(id).setAttribute("class", "active");
+  		divs[i].className = "active";
 	};
   };
 }
