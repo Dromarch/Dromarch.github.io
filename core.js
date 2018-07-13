@@ -42,13 +42,11 @@ function loadDoc(page_name) {
 function pageChange() {
 	var url = document.URL
 	var section = url.substr(url.lastIndexOf('/') + 1);
+	var name = section.substr(section.lastIndexOf('#') + 1);
 
 	switch (section) {
-	case "#home":
-		loadDoc("home");
-		break;
-	case "#projects":
-		loadDoc("projects");
+	case section:
+		loadDoc(name);
 		break;
 	}
 
