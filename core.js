@@ -27,19 +27,6 @@ function includeHTML() {
 }
 
 function loadDoc(page_name) {
-  id = "i_" + page_name;
-  alert(id);
-  var buttons = loader.getElementsByTagName("button");
-  for(var i in buttons) {
-  	if (buttons[i].id != id){
-  		alert(buttons[i].id)
-	  	buttons[i].className = "li";
-  	} else {
-  		alert(buttons[i].id)
-  		buttons[i].className = "active";
-	};
-  };
-
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -48,6 +35,8 @@ function loadDoc(page_name) {
   };
   xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
+  id = "i_" + page_name
+  document.getElementById(id).setAttribute("class", "active");
 }
 
 function pageChange() {
@@ -55,10 +44,5 @@ function pageChange() {
 	var section = url.substr(url.lastIndexOf('/') + 1);
 	var name = section.substr(section.lastIndexOf('#') + 1);
 
-	switch (section) {
-	case section:
-		loadDoc(name);
-		break;
-	}
-
+	loadDoc(name);
 }
