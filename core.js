@@ -27,6 +27,19 @@ function includeHTML() {
 }
 
 function loadDoc(page_name) {
+  id = "i_" + page_name;
+  alert(id);
+  var buttons = loader.getElementsByTagName("button");
+  for(var i in buttons) {
+  	if (buttons[i].id != id){
+  		alert(buttons[i].id)
+	  	buttons[i].className = "li";
+  	} else {
+  		alert(buttons[i].id)
+  		buttons[i].className = "active";
+	};
+  };
+
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -35,10 +48,6 @@ function loadDoc(page_name) {
   };
   xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
-  var buttons = loader.getElementsByTagName("button");
-  id = "i_" + page_name;
-  alert(id);
-
 }
 
 function pageChange() {
