@@ -42,8 +42,15 @@ function pageChange() {
 	var section = url.substr(url.lastIndexOf('/') + 1);
 	var name = section.substr(section.lastIndexOf('#') + 1);
 
-    document.getElementById("i" + name).setAttribute("class", "active");
-	alert("loader");
-
 	loadDoc(name);
 }
+
+$("#menu button").each(function () {      
+	var url = document.URL
+	var section = url.substr(url.lastIndexOf('/') + 1);
+	var name = section.substr(section.lastIndexOf('#') + 1);   
+    if ("i" + name == $(this).attr("id")){
+        $(this).addClass('active');
+    else
+        $(this).removeClass('active');
+});
