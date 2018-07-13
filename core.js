@@ -46,8 +46,6 @@ function loadDoc(page_name) {
   	}
   }
 
-  $("#left_roll").fadeOut();
-
 }
 
 function pageChange() {
