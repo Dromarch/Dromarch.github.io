@@ -56,6 +56,6 @@ function pageChange() {
 	loadDoc(name);
 	refreshMenu(name);
 
-	id = "i_" + name
-	document.getElementById(id).className = "active";
+	id = "i_" + name;
+	document.getElementById(id).setAttribute("class", "active");
 }
