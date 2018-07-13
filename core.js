@@ -33,7 +33,6 @@ function loadDoc(page_name) {
      document.getElementById("left_roll").innerHTML = this.responseText;
     }
   };
-  
   xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
 
