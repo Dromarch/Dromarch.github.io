@@ -44,5 +44,6 @@ function pageChange() {
 
 	loadDoc(name);
 
-	document.getElementById("i_home").setAttribute("class", "active");
+	alert(document.getElementById("i" + name).className)
+	document.getElementById("i" + name).setAttribute("class", "active");
 }
