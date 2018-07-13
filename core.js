@@ -44,6 +44,7 @@ function pageChange() {
 
 	loadDoc(name);
 
-	alert(document.getElementById("i" + name).className)
+	var buttons = loader.getElementsByTagName("button");
+	alert(buttons)
 	document.getElementById("i" + name).setAttribute("class", "active");
 }
