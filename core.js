@@ -59,5 +59,3 @@ function pageChange() {
 	var id = "i_" + name;
 	document.getElementById(id).setAttribute("class", "active");
 }
-
-		
