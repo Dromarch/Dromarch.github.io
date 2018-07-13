@@ -52,9 +52,9 @@ function pageChange() {
 	var url = document.URL
 	var section = url.substr(url.lastIndexOf('/') + 1);
 	var name = section.substr(section.lastIndexOf('#') + 1);
-	var id = "i_" + name;
-	document.getElementById(id).setAttribute("class", "active");
-	
+
 	loadDoc(name);
 	refreshMenu(name);
+
+	document.getElementById("i_home").setAttribute("class", "active");
 }
