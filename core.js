@@ -35,6 +35,17 @@ function loadDoc(page_name) {
   };
   xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
+}
+
+function refreshMenu(page_name) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("menu").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "menu.html", true);
+  xhttp.send();
   id = "i_" + page_name
   document.getElementById(id).setAttribute("class", "active");
 }
@@ -45,4 +56,5 @@ function pageChange() {
 	var name = section.substr(section.lastIndexOf('#') + 1);
 
 	loadDoc(name);
+	refreshMenu(name);
 }
