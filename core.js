@@ -42,9 +42,8 @@ function pageChange() {
 	var section = url.substr(url.lastIndexOf('/') + 1);
 	var name = section.substr(section.lastIndexOf('#') + 1);
 
-	loadDoc(name);
+    document.getElementById("i" + name).setAttribute("class", "active");
+	alert("loader");
 
-	var buttons = loader.getElementsByTagName("button");
-	alert(buttons)
-	document.getElementById("i" + name).setAttribute("class", "active");
+	loadDoc(name);
 }
