@@ -37,6 +37,7 @@ function loadDoc(page_name) {
   xhttp.send();
   var buttons = loader.getElementsByTagName("button");
   id = "i_" + page_name;
+  alert(id);
   for(var i in buttons) {
   	if (buttons[i].id != id){
   		alert(buttons[i].id)
@@ -46,6 +47,7 @@ function loadDoc(page_name) {
   		buttons[i].className = "active";
 	};
   };
+  alert(id);
 }
 
 function pageChange() {
