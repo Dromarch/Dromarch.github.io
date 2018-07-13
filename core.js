@@ -33,9 +33,7 @@ function loadDoc(page_name) {
      document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  if(page_name == ""){
-  	page_name = "home";
-  }
+  
   xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
 
