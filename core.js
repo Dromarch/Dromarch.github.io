@@ -35,15 +35,15 @@ function loadDoc(page_name) {
   };
   xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
-  var divs = loader.getElementsByTagName("div");
+  var buttons = loader.getElementsByTagName("button");
   id = "i_" + page_name;
-  for(var i in divs) {
-  	if (divs[i].id != id){
-  		alert(div[i].id)
-	  	divs[i].className = "li";
+  for(var i in buttons) {
+  	if (buttons[i].id != id){
+  		alert(buttons[i].id)
+	  	buttons[i].className = "li";
   	} else {
-  		alert(div[i].id)
-  		divs[i].className = "active";
+  		alert(buttons[i].id)
+  		buttons[i].className = "active";
 	};
   };
 }
