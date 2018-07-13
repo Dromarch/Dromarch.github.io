@@ -36,8 +36,15 @@ function loadDoc(page_name) {
   xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
 
-  var element = document.getElementById("i_" + page_name);
-  element.classList.toggle("active");
+  var buttons = document.getElementsByTagName('button')
+  var id = "i_" + page_name
+  for (var i in buttons) {
+  	if (buttons[i].id == id) {
+  		buttons[i].classList.toggle("active");
+  	} else {
+  		buttons[i].classList.remove("active");
+  	}
+  }
 }
 
 function pageChange() {
