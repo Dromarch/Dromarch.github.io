@@ -55,7 +55,5 @@ function pageChange() {
 
 	if (name != "") {
 		loadDoc(name);
-	} else {
-		loadDoc("home")
 	}
 }
