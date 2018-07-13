@@ -39,10 +39,11 @@ function loadDoc(page_name) {
   id = "i_" + page_name;
   for(var i=0; i<divs.length; i++) {
   	if (divs[i].id != id){
-	  divs[i].className = "li";
-  	};
+	  	divs[i].className = "li";
+  	} else {
+  		document.getElementById(id).setAttribute("class", "active");
+	};
   };
-  document.getElementById(id).setAttribute("class", "active");
 }
 
 function pageChange() {
