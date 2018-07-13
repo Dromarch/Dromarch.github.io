@@ -46,8 +46,7 @@ function refreshMenu(page_name) {
   };
   xhttp.open("GET", "menu.html", true);
   xhttp.send();
-  id = "i_" + page_name
-  document.getElementById(id).setAttribute("class", "active");
+
 }
 
 function pageChange() {
