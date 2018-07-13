@@ -30,7 +30,7 @@ function loadDoc(page_name) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("demo").innerHTML = this.responseText;
+     document.getElementById("left_roll").innerHTML = this.responseText;
     }
   };
   

@@ -160,6 +160,10 @@ button a:hover:not(.active) {
     color: white;
 }
 
+.active a {
+    color: white;
+}
+
 .zoom {
 	border-radius: 50%;
 	transition: all .50s;
