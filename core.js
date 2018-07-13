@@ -37,24 +37,12 @@ function loadDoc(page_name) {
   xhttp.send();
 }
 
-function refreshMenu(page_name) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("menu").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "menu.html", true);
-  xhttp.send();
-}
-
 function pageChange() {
 	var url = document.URL
 	var section = url.substr(url.lastIndexOf('/') + 1);
 	var name = section.substr(section.lastIndexOf('#') + 1);
 
 	loadDoc(name);
-	refreshMenu(name);
 
 	document.getElementById("i_home").setAttribute("class", "active");
 }
