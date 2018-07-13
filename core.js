@@ -38,16 +38,7 @@ function loadDoc(page_name) {
   var buttons = loader.getElementsByTagName("button");
   id = "i_" + page_name;
   alert(id);
-  for(var i in buttons) {
-  	if (buttons[i].id != id){
-  		alert(buttons[i].id)
-	  	buttons[i].className = "li";
-  	} else {
-  		alert(buttons[i].id)
-  		buttons[i].className = "active";
-	};
-  };
-  alert(id);
+
 }
 
 function pageChange() {
