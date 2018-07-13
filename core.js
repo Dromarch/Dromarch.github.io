@@ -35,15 +35,15 @@ function loadDoc(page_name) {
   };
   xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
+
+  var element = document.getElementById("i_" + page_name);
+  element.classList.toggle("active");
 }
 
 function pageChange() {
 	var url = document.URL
 	var section = url.substr(url.lastIndexOf('/') + 1);
 	var name = section.substr(section.lastIndexOf('#') + 1);
-
-	var element = document.getElementById("i_" + name);
-    element.classList.toggle("active");
 
 	loadDoc(name);
 }
