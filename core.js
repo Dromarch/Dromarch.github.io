@@ -37,7 +37,7 @@ function loadDoc(page_name) {
   xhttp.send();
   var divs = loader.getElementsByTagName("div");
   id = "i_" + page_name;
-  for(var i=0; i<divs.length; i++) {
+  for(var i in divs) {
   	if (divs[i].id != id){
   		alert(div[i].id)
 	  	divs[i].className = "li";
