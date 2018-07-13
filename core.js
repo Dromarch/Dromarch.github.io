@@ -42,5 +42,8 @@ function pageChange() {
 	var section = url.substr(url.lastIndexOf('/') + 1);
 	var name = section.substr(section.lastIndexOf('#') + 1);
 
+	var element = document.getElementById("i_" + name);
+    element.classList.toggle("active");
+
 	loadDoc(name);
 }
