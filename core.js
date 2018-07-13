@@ -45,13 +45,15 @@ function loadDoc(page_name) {
   		buttons[i].classList.remove("active");
   	}
   }
-  
+
 }
 
 function pageChange() {
 	var url = document.URL
 	var section = url.substr(url.lastIndexOf('/') + 1);
 	var name = section.substr(section.lastIndexOf('#') + 1);
-
-	loadDoc(name);
+	
+	if (name != "") {
+		loadDoc(name);
+	}
 }
