@@ -59,6 +59,4 @@ function pageChange() {
 
 	loadDoc(name);
 
-  $("#left_roll").fadeToggle();
-
 }
