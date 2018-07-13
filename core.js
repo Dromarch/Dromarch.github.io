@@ -33,6 +33,9 @@ function loadDoc(page_name) {
      document.getElementById("demo").innerHTML = this.responseText;
     }
   };
+  if(page_name == ""){
+  	page_name = "home";
+  }
   xhttp.open("GET", page_name + ".html", true);
   xhttp.send();
 
@@ -53,9 +56,6 @@ function pageChange() {
 	var section = url.substr(url.lastIndexOf('/') + 1);
 	var name = section.substr(section.lastIndexOf('#') + 1);
 
-	if (name != "") {
-		loadDoc(name);
-	} else {
-		loadDoc("home");
-	}
+	loadDoc(name);
+
 }
