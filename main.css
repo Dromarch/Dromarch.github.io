@@ -10,6 +10,7 @@ body {
 @font-face { font-family: MyriadProReg; src: url('fonts/MYRIADPRO-REGULAR.OTF'); } 
 h1.title { 
     font-size: 55;
+    padding: 0;
 }
 
 hr.z { 
