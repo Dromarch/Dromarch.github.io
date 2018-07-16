@@ -18,3 +18,12 @@
 	text-align: justify;
     font-size: 25;
 }
+
+.picture {
+	border-radius: 5%;
+	transition: all .50s;
+}
+
+.picture:hover {
+	border-radius: 2%;
+}
