@@ -11,5 +11,11 @@
 }
 
 .subtitle {
+	text-align: justify;
+    font-size: 45;
+}
+
+.topic {	
+	text-align: justify;
     font-size: 35;
 }
