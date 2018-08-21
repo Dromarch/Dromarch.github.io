@@ -62,11 +62,6 @@ function pageChange() {
 }
 
 function playMusic() {
-  myAudio = new Audio("BG.ogg");
-
-  $(myAudio).bind('ended', function()  {
-      myAudio.currentTime = 0;
-      myAudio.play();
-  });
-  myAudio.play();
+  var audio = new Audio('BG.ogg');
+  audio.play();
 } 
