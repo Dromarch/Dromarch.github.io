@@ -60,8 +60,3 @@ function pageChange() {
 	loadDoc(name);
 
 }
-
-function playMusic() {
-  var audio = new Audio('BG.ogg');
-  audio.play();
-} 
