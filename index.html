@@ -58,5 +58,14 @@
 <script>
 includeHTML();
 pageChange();
+
+myAudio = new Audio("BG.ogg");
+
+$(myAudio).bind('ended', function()  {
+    myAudio.currentTime = 0;
+    myAudio.play();
+});
+
+myAudio.play();
 </script>
 </body>
