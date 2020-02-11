@@ -120,11 +120,12 @@ p.text {
 }
 
 a {
+    color: #35b997;
     text-decoration: none;
 }
 
 a:hover {
-    color: #35b997;
+    color: #3163e1;
 }
 
 /* visited link */
