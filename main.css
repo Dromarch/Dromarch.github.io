@@ -119,7 +119,7 @@ p.text {
 	font-family: MyriadProReg;
 }
 
-a {
+a:link {
     color: #35b997;
     text-decoration: none;
 }
