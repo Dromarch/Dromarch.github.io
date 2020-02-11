@@ -119,6 +119,19 @@ p.text {
 	font-family: MyriadProReg;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #35b997;
+}
+
+/* visited link */
+a:visited {
+    color: #1c886c;
+}
+
 ul {
 	height: 45px;
 
