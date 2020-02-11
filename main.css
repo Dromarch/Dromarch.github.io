@@ -28,6 +28,11 @@ hr.z {
     text-align: center;
 }
 
+.left {
+    margin: auto;
+    text-align: left;
+}
+
 .footer {
     position: relative;
     left: 0;
