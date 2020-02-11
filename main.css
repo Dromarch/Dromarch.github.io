@@ -124,6 +124,10 @@ p.text {
 	font-family: MyriadProReg;
 }
 
+li.a:link {
+    color: black;
+}
+
 a:link {
     color: #35b997;
     text-decoration: none;
