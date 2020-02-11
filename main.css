@@ -8,6 +8,7 @@ body {
 
 @font-face { font-family: MyriadPro; src: url('fonts/MYRIADPRO-COND.OTF'); } 
 @font-face { font-family: MyriadProReg; src: url('fonts/MYRIADPRO-REGULAR.OTF'); } 
+@font-face { font-family: LatoRegular; src: url('fonts/Lato-Regular.ttf'); } 
 h1.title { 
     font-size: 55;
     padding: 0;
@@ -160,7 +161,7 @@ button a {
     display: block;
     color: #102232;
     text-align: center;
-    font-family: "Lato Regular";
+    font-family: "LatoRegular";
     text-transform: uppercase;
     padding: 0px 15px;
     text-decoration: none;
