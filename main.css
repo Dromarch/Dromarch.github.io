@@ -133,11 +133,6 @@ a:hover {
     color: #3163e1;
 }
 
-/* visited link */
-a:visited {
-    color: #135645;
-}
-
 ul {
 	height: 45px;
 
