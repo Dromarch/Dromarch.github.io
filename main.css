@@ -201,3 +201,5 @@ button a:hover:not(.active) {
 .icon:hover {
 	filter: grayscale(0%);
 }
+
+audio { display:none;}
