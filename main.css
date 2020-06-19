@@ -184,7 +184,6 @@ button a:hover:not(.active) {
 }
 
 .zoom {
-    width: 150px;
 	border-radius: 50%;
 	transition: all .50s;
 }
