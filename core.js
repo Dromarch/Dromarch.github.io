@@ -1,6 +1,6 @@
 var path = require('path'), fs=require('fs');
 
-function fromDir(startPath,filter){
+function fromDir(startPath, filter) {
 
     console.log('Starting from dir '+startPath+'/');
 
