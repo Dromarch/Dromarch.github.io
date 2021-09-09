@@ -160,6 +160,7 @@ button {
     padding: 0px;
     border: none;
     float: left;
+    border-radius: 0px;
 }
 
 button a {
