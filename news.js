@@ -24,3 +24,7 @@ function fromDir(startPath,filter){
         };
     };
 };
+
+fromDir('../news','.html');
+
+console.log("OI")

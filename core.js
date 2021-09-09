@@ -60,3 +60,5 @@ function pageChange() {
 	loadDoc(name);
 
 }
+
+console.log("CORE")
