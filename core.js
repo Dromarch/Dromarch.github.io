@@ -41,8 +41,8 @@ function loadDoc(page_name) {
   for (var i in buttons) {
   	if (buttons[i].id == id) {
   		buttons[i].classList.toggle("active");
-  	} else {
-  		buttons[i].classList.remove("active");
+//  	} else {
+//  		buttons[i].classList.remove("active");
   	}
   }
 
