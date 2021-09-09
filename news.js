@@ -19,7 +19,7 @@ function fromDir(startPath,filter){
         else if (filename.indexOf(filter)>=0) {
             console.log(filename)
             document.write(`
-                <link rel="import" href="/news/${filename}.html">
+                <div es-include-html="right_roll.html"></div>
             `);
         };
     };
