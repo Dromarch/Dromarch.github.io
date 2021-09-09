@@ -10,7 +10,7 @@ body {
 @font-face { font-family: MyriadProReg; src: url('fonts/MYRIADPRO-REGULAR.OTF'); } 
 @font-face { font-family: LatoRegular; src: url('fonts/Lato-Regular.ttf'); } 
 @font-face { font-family: Cocogoose; src: url('fonts/Cocogoose Pro-trial.ttf');}
-@font-face { font-family: CocogoosLight; src: url('fonts/Cocogoose Pro Light-trial.ttf');}
+@font-face { font-family: CocogooseLight; src: url('fonts/Cocogoose Pro Light-trial.ttf');}
 
 h1.title { 
     font-size: 55;
