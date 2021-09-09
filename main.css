@@ -181,15 +181,6 @@ button a:hover:not(.active) {
     color: #35b997;
 }
 
-.hide {
-    display: none;
-}
-
-.myDIV:hover + .hide {
-    display: block;
-    color: red;
-}
-
 .active {
     background-color: #35b997;
     color: white;
