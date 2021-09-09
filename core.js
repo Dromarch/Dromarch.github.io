@@ -1,4 +1,5 @@
-var path = require('path'), fs=require('fs');
+var path = require('path');
+var fs = require('fs');
 
 function fromDir(startPath, filter) {
 
