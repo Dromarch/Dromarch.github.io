@@ -9,6 +9,8 @@ body {
 @font-face { font-family: MyriadPro; src: url('fonts/MYRIADPRO-COND.OTF'); } 
 @font-face { font-family: MyriadProReg; src: url('fonts/MYRIADPRO-REGULAR.OTF'); } 
 @font-face { font-family: LatoRegular; src: url('fonts/Lato-Regular.ttf'); } 
+@font-face { font-family: Cocogoose; src: url('fonts/Cocogoose Pro-trial.ttf');}
+
 h1.title { 
     font-size: 55;
     padding: 0;
@@ -70,6 +72,11 @@ hr.z {
 	font-size: 25;
 	text-align: center;
 	line-height: 45px;
+}
+
+.left_header p {
+    font-family: "Cocogoose";
+    font-size: 18;
 }
 
 .right_header {
@@ -172,6 +179,15 @@ button a {
 button a:hover:not(.active) {
     background-color: #f1f1f1;
     color: #35b997;
+}
+
+.hide {
+    display: none;
+}
+
+.myDIV:hover + .hide {
+    display: block;
+    color: red;
 }
 
 .active {
