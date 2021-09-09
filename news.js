@@ -24,5 +24,3 @@ function fromDir(startPath,filter){
         };
     };
 };
-
-fromDir('../news','.html');
