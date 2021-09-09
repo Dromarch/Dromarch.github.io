@@ -17,6 +17,7 @@ function fromDir(startPath,filter){
             fromDir(filename,filter); //recurse
         }
         else if (filename.indexOf(filter)>=0) {
+            console.log(filename)
             document.write(`
                 <link rel="import" href="/news/${filename}.html">
             `);
