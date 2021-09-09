@@ -2,7 +2,7 @@ var path = require('path'), fs=require('fs');
 
 function fromDir(startPath,filter){
 
-    //console.log('Starting from dir '+startPath+'/');
+    console.log('Starting from dir '+startPath+'/');
 
     if (!fs.existsSync(startPath)){
         console.log("no dir ",startPath);
