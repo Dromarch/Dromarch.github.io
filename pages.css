@@ -47,6 +47,9 @@
 
 .img-hover-zoom:hover img {
     transform: scale(1.1);
+}
+
+.img-hover-zoom:active img {
     animation: flash linear 0.3s 1;
 }
 
