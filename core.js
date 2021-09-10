@@ -65,5 +65,4 @@ function pageChange() {
 function updateDiv(div) {
   var div = '#' + div;
   $(div).load(window.location.href + " " + div);
-  console.log(div)
 }
