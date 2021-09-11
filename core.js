@@ -31,7 +31,8 @@ function loadDoc(page_name) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("left_roll").innerHTML = this.responseText;
+      document.getElementById("left_roll").innerHTML = this.responseText;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
   xhttp.open("GET", page_name + ".html", true);
@@ -46,7 +47,6 @@ function loadDoc(page_name) {
   		buttons[i].classList.remove("active");
   	}
   }
-  window.scrollTo({ top: 100, behavior: 'smooth' });
 }
 
 function pageChange() {
