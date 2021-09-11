@@ -1,8 +1,3 @@
----
-title: "Gabe MZ | Fog Effects"
-author: "Gabriel"
-date: "10/09/20"
----
 ![Main Thumb](../images/Thumb_GMZ_FogEffects.png)
 
 # Gabe MZ - Fog Effects
