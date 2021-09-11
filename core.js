@@ -46,7 +46,7 @@ function loadDoc(page_name) {
   		buttons[i].classList.remove("active");
   	}
   }
-  window.location.reload()
+  window.scrollTo(0, 0);
 }
 
 function pageChange() {
