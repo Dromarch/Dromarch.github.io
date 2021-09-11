@@ -32,7 +32,6 @@ function loadDoc(page_name) {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("left_roll").innerHTML = this.responseText;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
   xhttp.open("GET", page_name + ".html", true);
@@ -73,6 +72,7 @@ window.onhashchange = function() {
   } else {
       if (window.location.hash != '#undefined') {
         location.reload();
+        this.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         history.pushState("", document.title, window.location.pathname);
         location.reload();
