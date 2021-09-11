@@ -41,7 +41,7 @@
   - OPM: Save Menu
 
 ## Visual Plugins 
-- [Fog Effects](Plugins/GMZ_FogEffects)
+- [Fog Effects](#gabemz_fogeffects)
 - Enhanced Camera
 - Animated Pictures
 
