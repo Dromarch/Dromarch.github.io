@@ -41,7 +41,7 @@
   - OPM: Save Menu
 
 ## Visual Plugins 
-- <a href="#gabemz_fogeffects" onclick="window.location.reload()">Fog Effects</a>
+- <a href="#gabemz_fogeffects" onclick="loadDoc('gabemz_fogeffects')">Fog Effects</a>
 - Enhanced Camera
 - Animated Pictures
 
