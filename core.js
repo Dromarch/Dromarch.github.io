@@ -72,10 +72,10 @@ window.onhashchange = function() {
       window.innerDocClick = false;
   } else {
       if (window.location.hash != '#undefined') {
-          goBack();
+        location.reload();
       } else {
-          history.pushState("", document.title, window.location.pathname);
-          location.reload();
+        history.pushState("", document.title, window.location.pathname);
+        location.reload();
       }
   }
 }
