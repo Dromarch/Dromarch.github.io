@@ -46,7 +46,7 @@ function loadDoc(page_name) {
   		buttons[i].classList.remove("active");
   	}
   }
-  window.scrollTo(0, 0);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function pageChange() {
