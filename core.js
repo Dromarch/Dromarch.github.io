@@ -66,3 +66,16 @@ function updateDiv(div) {
   var div = '#' + div;
   $(div).load(window.location.href + " " + div);
 }
+
+window.onhashchange = function() {
+  if (window.innerDocClick) {
+      window.innerDocClick = false;
+  } else {
+      if (window.location.hash != '#undefined') {
+          goBack();
+      } else {
+          history.pushState("", document.title, window.location.pathname);
+          location.reload();
+      }
+  }
+}
