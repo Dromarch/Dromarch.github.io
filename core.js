@@ -46,7 +46,7 @@ function loadDoc(page_name) {
   		buttons[i].classList.remove("active");
   	}
   }
-  window.scrollTo({ top: -100, behavior: 'smooth' });
+  window.scrollTo({ top: 100, behavior: 'smooth' });
 }
 
 function pageChange() {
