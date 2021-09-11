@@ -67,7 +67,7 @@ function updateDiv(div) {
   $(div).load(window.location.href + " " + div);
 }
 
-window.onhashchange = function() {
+window.aonhashchange = function() {
   if (window.innerDocClick) {
       window.innerDocClick = false;
   } else {
