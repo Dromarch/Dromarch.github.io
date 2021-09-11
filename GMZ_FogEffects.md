@@ -1,4 +1,4 @@
-![Main Thumb](../images/Thumb_GMZ_FogEffects.png)
+![Main Thumb](../pictures/thumbs/Thumb_GMZ_FogEffects.png)
 
 # Gabe MZ - Fog Effects
 
