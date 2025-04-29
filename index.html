@@ -1,69 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-
-	<script src="core.js"></script>
-	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="pages.css">
-	<link rel="shortcut icon" href="pictures/esteem_ico.png" />
-
-	<div class="first_index">
-		<title>Gabe Plugins</title>
-	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script> 
-	$(document).ready(function(){
-	    $("#spoilerh").click(function(){
-	        $("#spoilerb").slideToggle("slow");
-	    });
-	});
-	</script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabe Plugins - Plugins Premium para RPG Maker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .logo-font {
+            font-family: 'MedievalSharp', cursive;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        
+        .plugin-card {
+            transition: all 0.3s ease;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #334155;
+        }
+        
+        .plugin-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+            border-color: #6366f1;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.7);
+        }
+    </style>
 </head>
 <body>
-	
-	<div class="header_div">
-		<div class="left_header">
-			<p>GABE PLUGINS</p>
-		</div>
-		<div class="right_header">
-			<div id="menu">
-				<button id="i_home" class="li"><a href="#home" onclick="loadDoc('home')">home</a></buttons>
-				<button id="i_plugins" class="li"><a href="#plugins" onclick="loadDoc('plugins')">plugins</a></buttons>
-				<button id="i_scripts" class="li"><a href="#scripts" onclick="loadDoc('scripts')">scripts</a></buttons>
-				<button id="i_projects" class="li"><a href="#projects" onclick="loadDoc('projects')">projects</a></buttons>
-				<button id="i_musics" class="li"><a href="#musics" onclick="loadDoc('musics')">musics</a></buttons>
-				<button id="i_contact" class="li"><a href="#contact" onclick="loadDoc('contact')">contact</a></buttons>
-				<button id="i_partners" class="li"><a href="#partners" onclick="loadDoc('partners')">partners</a></buttons>
-			</div>
-		</div>
-	</div>
+    <!-- Header/Navbar -->
+    <header class="hero-gradient border-b border-slate-800 fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center">
+                        <i class="fas fa-dice-d20 text-white text-xl"></i>
+                    </div>
+                    <h1 class="logo-font text-2xl md:text-3xl font-bold text-white">
+                        <span class="text-indigo-400">Gabe</span> Plugins
+                    </h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link text-indigo-300 font-medium hover:text-white">Início</a>
+                    <a href="#" class="nav-link text-slate-300 font-medium hover:text-white">Plugins</a>
+                    <a href="#" class="nav-link text-slate-300 font-medium hover:text-white">Tutoriais</a>
+                    <a href="#" class="nav-link text-slate-300 font-medium hover:text-white">Comunidade</a>
+                    <a href="#" class="nav-link text-slate-300 font-medium hover:text-white">Sobre</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-slate-300 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 pb-16 px-4 bg-[url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrRfBHaco6RRZG6o10s81gnm1RUPHhQHCn4_jroHgTz6ww9nqQ2KzCtksMb2w-nt_WCAtM0ETKBXNKsJadgoHrmwOYIiF-RS_GaoTnfi-VE6Oq9OVTgkmGCKnYoBK7T03FgZB0wUwn2z4GZ3ABzNeuh4P_Kqvj2cZMBsgqCF8ClH6LhdiLUbPba1vhBA/s1920/2020-09-14-RPGMakerMZ-banner.webp')] bg-cover bg-center bg-no-repeat bg-fixed">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="container mx-auto relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white glow-text">
+                Transforme seu <span class="text-indigo-400">RPG Maker</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto">
+                Plugins premium para elevar sua experiência de desenvolvimento de jogos
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4 mb-16">
+                <a href="#" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition duration-300 transform hover:scale-105">
+                    Explorar Plugins <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg transition duration-300 transform hover:scale-105">
+                    <i class="fab fa-youtube mr-2"></i> Ver Tutoriais
+                </a>
+            </div>
+            
+            <div class="scroll-down text-white text-4xl animate-bounce">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
 
-	<div class="main_roll">
-			<div id="left_roll">
-			<div es-include-html="home.html"></div>
-			</div>
-			<div class="vrl"></div>
-			<div es-include-html="right_roll.html"></div>
+    <!-- Main Content -->
+    <main class="py-16 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <!-- Welcome Board -->
+            <div class="max-w-4xl mx-auto mb-16 plugin-card rounded-xl p-8 shadow-xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-indigo-400 flex items-center">
+                    <i class="fas fa-scroll mr-4"></i> Bem-vindo ao Gabe Plugins!
+                </h2>
+                <p class="text-lg text-slate-300 mb-6">
+                    Seja você um desenvolvedor iniciante ou experiente, nossos plugins premium para RPG Maker irão levar seus jogos para o próximo nível. Oferecemos soluções poderosas e fáceis de usar para todos os aspectos do desenvolvimento de jogos.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-indigo-500 transition">
+                        <div class="text-indigo-400 text-3xl mb-4">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Sistemas Únicos</h3>
+                        <p class="text-slate-400">Plugins inovadores que você não encontra em nenhum outro lugar</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-indigo-500 transition">
+                        <div class="text-indigo-400 text-3xl mb-4">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Suporte Premium</h3>
+                        <p class="text-slate-400">Atendimento personalizado para ajudar na implementação</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-indigo-500 transition">
+                        <div class="text-indigo-400 text-3xl mb-4">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Documentação Completa</h3>
+                        <p class="text-slate-400">Tutoriais detalhados e exemplos práticos</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Plugin Categories -->
+            <h2 class="text-3xl font-bold mb-10 text-center text-white">
+                <span class="text-indigo-400">Categorias</span> de Plugins
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <a href="#" class="plugin-card rounded-xl overflow-hidden group">
+                    <div class="relative h-48 bg-indigo-900 flex items-center justify-center">
+                        <i class="fas fa-battle-net text-6xl text-white opacity-20 group-hover:opacity-40 transition"></i>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-battle-net text-4xl text-indigo-400 group-hover:text-white transition"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white group-hover:text-indigo-400 transition">Sistemas de Batalha</h3>
+                        <p class="text-slate-400">Revolutionize o combate em seu jogo</p>
+                        <div class="mt-4 text-indigo-400 group-hover:text-white transition flex items-center">
+                            Explorar <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Category 2 -->
+                <a href="#" class="plugin-card rounded-xl overflow-hidden group">
+                    <div class="relative h-48 bg-purple-900 flex items-center justify-center">
+                        <i class="fas fa-users text-6xl text-white opacity-20 group-hover:opacity-40 transition"></i>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-users text-4xl text-purple-400 group-hover:text-white transition"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white group-hover:text-purple-400 transition">Sistemas de Party</h3>
+                        <p class="text-slate-400">Controle avançado de membros do grupo</p>
+                        <div class="mt-4 text-purple-400 group-hover:text-white transition flex items-center">
+                            Explorar <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Category 3 -->
+                <a href="#" class="plugin-card rounded-xl overflow-hidden group">
+                    <div class="relative h-48 bg-cyan-900 flex items-center justify-center">
+                        <i class="fas fa-chess-board text-6xl text-white opacity-20 group-hover:opacity-40 transition"></i>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-chess-board text-4xl text-cyan-400 group-hover:text-white transition"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white group-hover:text-cyan-400 transition">Sistemas de Mapas</h3>
+                        <p class="text-slate-400">Crie mapas dinâmicos e interativos</p>
+                        <div class="mt-4 text-cyan-400 group-hover:text-white transition flex items-center">
+                            Explorar <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Category 4 -->
+                <a href="#" class="plugin-card rounded-xl overflow-hidden group">
+                    <div class="relative h-48 bg-amber-900 flex items-center justify-center">
+                        <i class="fas fa-tasks text-6xl text-white opacity-20 group-hover:opacity-40 transition"></i>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-tasks text-4xl text-amber-400 group-hover:text-white transition"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white group-hover:text-amber-400 transition">Sistemas de Quest</h3>
+                        <p class="text-slate-400">Missões complexas e sistemas de recompensa</p>
+                        <div class="mt-4 text-amber-400 group-hover:text-white transition flex items-center">
+                            Explorar <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
 
-	<div style="clear: both;"></div> 
-	</div>
+    <!-- Featured Plugins -->
+    <section class="py-16 bg-slate-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4 text-center text-white">
+                Plugins <span class="text-indigo-400">Em Destaque</span>
+            </h2>
+            <p class="text-lg text-slate-300 mb-10 text-center max-w-2xl mx-auto">
+                Nossas soluções mais populares que estão transformando jogos RPG Maker
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Plugin 1 -->
+                <div class="plugin-card rounded-xl overflow-hidden hover:shadow-indigo-500/20 transition">
+                    <div class="relative h-48 bg-gradient-to-r from-indigo-900 to-purple-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-black opacity-40"></div>
+                        <img src="https://img.itch.zone/aW1nLzQxODQwNDIucG5n/original/uic97B.png" alt="Battle System" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="relative z-10 text-center p-4">
+                            <span class="bg-indigo-600 text-white text-xs font-semibold px-3 py-1 rounded-full">MAIS VENDIDO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-white">Gabe Battle System</h3>
+                            <span class="bg-slate-700 text-amber-400 text-sm font-semibold px-2 py-1 rounded">R$ 49,90</span>
+                        </div>
+                        <p class="text-slate-400 mb-4">Sistema de batalha totalmente personalizável com combos, habilidades conjuntas e efeitos visuais impressionantes.</p>
+                        <div class="flex items-center text-sm text-slate-400 mb-4">
+                            <i class="fas fa-star text-amber-400 mr-1"></i>
+                            <span class="mr-2">4.9</span>
+                            <i class="fas fa-download text-indigo-400 mr-1"></i>
+                            <span>1,240+ downloads</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg text-center transition">
+                                Comprar
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-indigo-400 rounded-lg transition">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plugin 2 -->
+                <div class="plugin-card rounded-xl overflow-hidden hover:shadow-indigo-500/20 transition">
+                    <div class="relative h-48 bg-gradient-to-r from-purple-900 to-pink-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-black opacity-40"></div>
+                        <img src="https://via.placeholder.com/400x200/1e293b/6366f1?text=Gabe+Quest+Log" alt="Quest Log" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="relative z-10 text-center p-4">
+                            <span class="bg-pink-600 text-white text-xs font-semibold px-3 py-1 rounded-full">NOVO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-white">Gabe Quest Log</h3>
+                            <span class="bg-slate-700 text-amber-400 text-sm font-semibold px-2 py-1 rounded">R$ 34,90</span>
+                        </div>
+                        <p class="text-slate-400 mb-4">Sistema completo de registro de missões com categorias, recompensas progressivas e rastreamento de objetivos.</p>
+                        <div class="flex items-center text-sm text-slate-400 mb-4">
+                            <i class="fas fa-star text-amber-400 mr-1"></i>
+                            <span class="mr-2">4.8</span>
+                            <i class="fas fa-download text-indigo-400 mr-1"></i>
+                            <span>890+ downloads</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg text-center transition">
+                                Comprar
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-indigo-400 rounded-lg transition">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Plugin 3 -->
+                <div class="plugin-card rounded-xl overflow-hidden hover:shadow-indigo-500/20 transition">
+                    <div class="relative h-48 bg-gradient-to-r from-cyan-900 to-blue-900 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-black opacity-40"></div>
+                        <img src="https://via.placeholder.com/400x200/1e293b/6366f1?text=Gabe+Dynamic+Lights" alt="Dynamic Lights" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="relative z-10 text-center p-4">
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">ATUALIZADO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-white">Gabe Dynamic Lights</h3>
+                            <span class="bg-slate-700 text-amber-400 text-sm font-semibold px-2 py-1 rounded">R$ 29,90</span>
+                        </div>
+                        <p class="text-slate-400 mb-4">Sistema de iluminação dinâmica com sombras, fontes de luz móveis e efeitos atmosféricos impressionantes.</p>
+                        <div class="flex items-center text-sm text-slate-400 mb-4">
+                            <i class="fas fa-star text-amber-400 mr-1"></i>
+                            <span class="mr-2">4.7</span>
+                            <i class="fas fa-download text-indigo-400 mr-1"></i>
+                            <span>1,050+ downloads</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg text-center transition">
+                                Comprar
+                            </a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-indigo-400 rounded-lg transition">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-indigo-600 text-indigo-400 font-medium rounded-lg hover:bg-indigo-600 hover:text-white hover:border-transparent transition">
+                    Ver Todos os Plugins
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-	<div class="footer">
-	  <p>
-	  Gabe Plugins by Gabe | All Rights Reserved<br>
-	  Hourglass Art by <a target="_blank" href="http://sanatah.tumblr.com">Mercia<a>
-	  </p>
-	</div>
+    <!-- Testimonials -->
+    <section class="py-16 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-10 text-center text-white">
+                O que os <span class="text-indigo-400">Desenvolvedores</span> dizem
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="plugin-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-900 flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-indigo-300">JD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white">João Dev</h4>
+                            <span class="text-sm text-slate-400">Criador de "Reino das Sombras"</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-4">
+                        "O Gabe Battle System revolucionou meu jogo. A facilidade de configuração e os efeitos visuais impressionantes fizeram toda a diferença nas avaliações."
+                    </p>
+                    <div class="flex text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="plugin-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-purple-900 flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-purple-300">MG</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white">Maria Game</h4>
+                            <span class="text-sm text-slate-400">Criadora de "Cronicas de Eldoria"</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-4">
+                        "Nunca vi um sistema de quest tão completo quanto o Gabe Quest Log. Meus jogadores adoram o sistema de rastreamento e as recompensas progressivas."
+                    </p>
+                    <div class="flex text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="plugin-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-cyan-900 flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold text-cyan-300">CR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white">Carlos RPG</h4>
+                            <span class="text-sm text-slate-400">Criador de "Lendas do Abismo"</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-4">
+                        "Os plugins do Gabe têm um nível de qualidade e suporte que eu não encontro em outros lugares. O Dynamic Lights mudou completamente a atmosfera do meu jogo."
+                    </p>
+                    <div class="flex text-amber-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-includeHTML();
-pageChange();
-fromDir('../news','.html');
-</script>
-<!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
-<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+    <!-- Newsletter -->
+    <section class="py-16 bg-gradient-to-r from-indigo-900 to-purple-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4 text-white">
+                    Fique por dentro das <span class="text-amber-300">Novidades</span>
+                </h2>
+                <p class="text-lg text-indigo-200 mb-8">
+                    Assine nossa newsletter e receba atualizações sobre novos plugins, promoções exclusivas e tutoriais gratuitos.
+                </p>
+                
+                <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                    <input type="email" placeholder="Seu melhor e-mail" class="flex-grow px-5 py-3 rounded-lg bg-indigo-800 bg-opacity-50 border border-indigo-700 text-white placeholder-indigo-400 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                    <button type="submit" class="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-lg transition">
+                        Assinar <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+                
+                <p class="text-sm text-indigo-300 mt-4">
+                    Não compartilhamos seu e-mail com ninguém. Você pode cancelar a qualquer momento.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<!-- Load the element definition -->
-<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-16 pb-8 border-t border-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center mr-2">
+                            <i class="fas fa-dice-d20 text-white text-sm"></i>
+                        </div>
+                        Gabe Plugins
+                    </h3>
+                    <p class="text-slate-400 mb-4">
+                        Plugins premium de alta qualidade para RPG Maker MV/MZ, criados com paixão para desenvolvedores criativos.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                            <i class="fab fa-discord text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Início</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Plugins</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Tutoriais</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Documentação</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Suporte</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Categorias</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Sistemas de Batalha</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Sistemas de Quest</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Efeitos Visuais</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Gerenciamento de Party</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Ferramentas para Mapas</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contato</h3>
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-indigo-400 mt-1 mr-3"></i>
+                            <span>contato@gabeplugins.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-indigo-400 mt-1 mr-3"></i>
+                            <span>www.gabeplugins.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-headset text-indigo-400 mt-1 mr-3"></i>
+                            <span>Suporte via Discord</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-500 text-sm mb-4 md:mb-0">
+                    &copy; 2023 Gabe Plugins. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-slate-500 hover:text-indigo-400 text-sm transition">Termos de Serviço</a>
+                    <a href="#" class="text-slate-500 hover:text-indigo-400 text-sm transition">Política de Privacidade</a>
+                    <a href="#" class="text-slate-500 hover:text-indigo-400 text-sm transition">Licenças</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for mobile menu toggle (would be expanded in a real implementation)
+        document.querySelector('button').addEventListener('click', function() {
+            alert('Menu mobile seria aberto aqui em uma implementação completa.');
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
+</html>
