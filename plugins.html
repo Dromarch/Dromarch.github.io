@@ -1,23 +1,664 @@
-<div class="left_roll">
-	<div class="center">
-		<h1 class="title">PLUGINS</h1>
-		<hr class="z" noshade color="white">
-		<p class="center">RPG Maker MV/MZ Plugins</p>
-		<hr class="z" noshade color="white">
-		<div class="img-hover-zoom" width="100%">
-			<img src="pictures/thumbs/MZ.png">
-		</div>
-		<hr class="z" noshade color="white">
-		<div class="img-hover-zoom" width="100%">
-			<img src="pictures/thumbs/MV.png">
-		</div>
-	</div>
-</div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Plugins | Gabe Plugins</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .logo-font {
+            font-family: 'MedievalSharp', cursive;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        
+        .plugin-card {
+            transition: all 0.3s ease;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #334155;
+        }
+        
+        .plugin-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+            border-color: #6366f1;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .category-filter {
+            transition: all 0.3s ease;
+        }
+        
+        .category-filter:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
+        }
+        
+        .category-filter.active {
+            background-color: #6366f1;
+            color: white;
+            border-color: #6366f1;
+        }
+        
+        .pagination-link {
+            transition: all 0.3s ease;
+        }
+        
+        .pagination-link:hover:not(.active) {
+            background-color: #1e293b;
+        }
+        
+        .pagination-link.active {
+            background-color: #6366f1;
+            color: white;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.7);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="hero-gradient border-b border-slate-800 fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center">
+                        <i class="fas fa-dice-d20 text-white text-xl"></i>
+                    </div>
+                    <h1 class="logo-font text-2xl md:text-3xl font-bold text-white">
+                        <span class="text-indigo-400">Gabe</span> Plugins
+                    </h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link text-slate-300 font-medium hover:text-white">Início</a>
+                    <a href="#" class="nav-link text-indigo-300 font-medium hover:text-white">Plugins</a>
+                    <a href="#" class="nav-link text-slate-300 font-medium hover:text-white">Tutoriais</a>
+                    <a href="#" class="nav-link text-slate-300 font-medium hover:text-white">Comunidade</a>
+                    <a href="#" class="nav-link text-slate-300 font-medium hover:text-white">Sobre</a>
+                </nav>
+                
+                <!-- User Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-slate-300 hover:text-white">
+                        <i class="fas fa-search text-xl"></i>
+                    </a>
+                    <a href="#" class="text-slate-300 hover:text-white">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                    </a>
+                    <a href="#" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium">
+                        Minha Conta
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-slate-300 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
-<script> 
-$(document).ready(function(){
-    $("#spoilerh").click(function(){
-        $("#spoilerb").slideToggle("slow");
-    });
-});
-</script>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 bg-[url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrRfBHaco6RRZG6o10s81gnm1RUPHhQHCn4_jroHgTz6ww9nqQ2KzCtksMb2w-nt_WCAtM0ETKBXNKsJadgoHrmwOYIiF-RS_GaoTnfi-VE6Oq9OVTgkmGCKnYoBK7T03FgZB0wUwn2z4GZ3ABzNeuh4P_Kqvj2cZMBsgqCF8ClH6LhdiLUbPba1vhBA/s1920/2020-09-14-RPGMakerMZ-banner.webp')] bg-cover bg-center bg-no-repeat">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="container mx-auto relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white glow-text">
+                Catálogo de <span class="text-indigo-400">Plugins</span>
+            </h1>
+            <p class="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
+                Explore nossa coleção premium de plugins para RPG Maker MV/MZ. Ferramentas poderosas para criar jogos incríveis.
+            </p>
+            
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto relative">
+                <input type="text" placeholder="Buscar plugins por nome, categoria ou recurso..." 
+                       class="w-full px-6 py-4 bg-slate-800 bg-opacity-70 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                <button class="absolute right-3 top-3 text-slate-400 hover:text-indigo-400">
+                    <i class="fas fa-search text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-12 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Sidebar Filters -->
+                <aside class="lg:w-1/4">
+                    <div class="plugin-card rounded-xl p-6 sticky top-24">
+                        <!-- Categories -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                                <i class="fas fa-tags text-indigo-400 mr-3"></i> Categorias
+                            </h3>
+                            <div class="space-y-2">
+                                <a href="#" class="block category-filter active px-4 py-2 border border-slate-700 rounded-lg text-slate-300 hover:text-white hover:border-indigo-500">
+                                    <i class="fas fa-battle-net mr-2"></i> Todos Plugins
+                                </a>
+                                <a href="#" class="block category-filter px-4 py-2 border border-slate-700 rounded-lg text-slate-300 hover:text-white hover:border-indigo-500">
+                                    <i class="fas fa-fire mr-2"></i> Sistemas de Batalha
+                                </a>
+                                <a href="#" class="block category-filter px-4 py-2 border border-slate-700 rounded-lg text-slate-300 hover:text-white hover:border-indigo-500">
+                                    <i class="fas fa-users mr-2"></i> Gerenciamento de Party
+                                </a>
+                                <a href="#" class="block category-filter px-4 py-2 border border-slate-700 rounded-lg text-slate-300 hover:text-white hover:border-indigo-500">
+                                    <i class="fas fa-tasks mr-2"></i> Sistemas de Quest
+                                </a>
+                                <a href="#" class="block category-filter px-4 py-2 border border-slate-700 rounded-lg text-slate-300 hover:text-white hover:border-indigo-500">
+                                    <i class="fas fa-map mr-2"></i> Mapeamento
+                                </a>
+                                <a href="#" class="block category-filter px-4 py-2 border border-slate-700 rounded-lg text-slate-300 hover:text-white hover:border-indigo-500">
+                                    <i class="fas fa-lightbulb mr-2"></i> Efeitos Visuais
+                                </a>
+                                <a href="#" class="block category-filter px-4 py-2 border border-slate-700 rounded-lg text-slate-300 hover:text-white hover:border-indigo-500">
+                                    <i class="fas fa-cogs mr-2"></i> Ferramentas
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Filter -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                                <i class="fas fa-coins text-amber-400 mr-3"></i> Faixa de Preço
+                            </h3>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="radio" id="price-all" name="price" class="mr-2" checked>
+                                    <label for="price-all" class="text-slate-300">Todos</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="price-free" name="price" class="mr-2">
+                                    <label for="price-free" class="text-slate-300">Gratuitos</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="price-1" name="price" class="mr-2">
+                                    <label for="price-1" class="text-slate-300">Até R$ 20</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="price-2" name="price" class="mr-2">
+                                    <label for="price-2" class="text-slate-300">R$ 20 - R$ 50</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="price-3" name="price" class="mr-2">
+                                    <label for="price-3" class="text-slate-300">Acima de R$ 50</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Compatibility -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                                <i class="fas fa-puzzle-piece text-green-400 mr-3"></i> Compatibilidade
+                            </h3>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="compat-mv" class="mr-2">
+                                    <label for="compat-mv" class="text-slate-300">RPG Maker MV</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="compat-mz" class="mr-2" checked>
+                                    <label for="compat-mz" class="text-slate-300">RPG Maker MZ</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="compat-both" class="mr-2" checked>
+                                    <label for="compat-both" class="text-slate-300">Ambos</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sort -->
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                                <i class="fas fa-sort-amount-down text-purple-400 mr-3"></i> Ordenar por
+                            </h3>
+                            <select class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                                <option>Mais Relevantes</option>
+                                <option>Mais Recentes</option>
+                                <option>Mais Populares</option>
+                                <option>Preço: Menor para Maior</option>
+                                <option>Preço: Maior para Menor</option>
+                                <option>Melhor Avaliados</option>
+                            </select>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- Plugin Listing -->
+                <div class="lg:w-3/4">
+                    <!-- Results Info -->
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
+                        <div class="mb-4 sm:mb-0">
+                            <h2 class="text-2xl font-bold text-white">
+                                <span class="text-indigo-400">32</span> Plugins Encontrados
+                            </h2>
+                            <p class="text-slate-400">Mostrando 1-12 de 32 resultados</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-slate-300">Visualização:</span>
+                            <button class="p-2 bg-slate-800 rounded-lg text-indigo-400">
+                                <i class="fas fa-th-large"></i>
+                            </button>
+                            <button class="p-2 bg-slate-700 rounded-lg text-slate-300">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Plugin Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <!-- Plugin 1 -->
+                        <div class="plugin-card rounded-xl overflow-hidden hover:shadow-indigo-500/20 transition">
+                            <div class="relative h-48 bg-gradient-to-r from-indigo-900 to-purple-900 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-black opacity-40"></div>
+                                <img src="https://img.itch.zone/aW1nLzQxODQwNDIucG5n/original/uic97B.png" alt="Battle System" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="relative z-10 text-center p-4">
+                                    <span class="bg-indigo-600 text-white text-xs font-semibold px-3 py-1 rounded-full">MAIS VENDIDO</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-xl font-bold text-white">Akea - Battle Camera</h3>
+                                    <span class="bg-slate-700 text-amber-400 text-sm font-semibold px-2 py-1 rounded">R$ 49,90</span>
+                                </div>
+                                <p class="text-slate-400 mb-4">Sistema avançado de câmera para batalhas com múltiplos ângulos e efeitos cinematográficos.</p>
+                                <div class="flex items-center text-sm text-slate-400 mb-4">
+                                    <i class="fas fa-star text-amber-400 mr-1"></i>
+                                    <span class="mr-2">4.9</span>
+                                    <i class="fas fa-download text-indigo-400 mr-1"></i>
+                                    <span>1,240+ downloads</span>
+                                </div>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg text-center transition">
+                                        Comprar
+                                    </a>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-indigo-400 rounded-lg transition">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Plugin 2 -->
+                        <div class="plugin-card rounded-xl overflow-hidden hover:shadow-indigo-500/20 transition">
+                            <div class="relative h-48 bg-gradient-to-r from-purple-900 to-pink-900 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-black opacity-40"></div>
+                                <img src="https://img.itch.zone/aW1nLzY0MDU3MjQucG5n/original/Ev679K.png" alt="Quest Log" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="relative z-10 text-center p-4">
+                                    <span class="bg-pink-600 text-white text-xs font-semibold px-3 py-1 rounded-full">NOVO</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-xl font-bold text-white">Gabe MZ - Fog Effects</h3>
+                                    <span class="bg-slate-700 text-amber-400 text-sm font-semibold px-2 py-1 rounded">R$ 34,90</span>
+                                </div>
+                                <p class="text-slate-400 mb-4">Efeitos de névoa dinâmica com controle de densidade, movimento e cores personalizadas.</p>
+                                <div class="flex items-center text-sm text-slate-400 mb-4">
+                                    <i class="fas fa-star text-amber-400 mr-1"></i>
+                                    <span class="mr-2">4.8</span>
+                                    <i class="fas fa-download text-indigo-400 mr-1"></i>
+                                    <span>890+ downloads</span>
+                                </div>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg text-center transition">
+                                        Comprar
+                                    </a>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-indigo-400 rounded-lg transition">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Plugin 3 -->
+                        <div class="plugin-card rounded-xl overflow-hidden hover:shadow-indigo-500/20 transition">
+                            <div class="relative h-48 bg-gradient-to-r from-cyan-900 to-blue-900 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-black opacity-40"></div>
+                                <img src="https://img.itch.zone/aW1nLzY0MDU4MTMucG5n/original/helter.png" alt="Dynamic Lights" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="relative z-10 text-center p-4">
+                                    <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">ATUALIZADO</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-xl font-bold text-white">Gabe MZ - Followers Interaction</h3>
+                                    <span class="bg-slate-700 text-amber-400 text-sm font-semibold px-2 py-1 rounded">R$ 29,90</span>
+                                </div>
+                                <p class="text-slate-400 mb-4">Sistema completo de interação com seguidores, incluindo diálogos e ações específicas.</p>
+                                <div class="flex items-center text-sm text-slate-400 mb-4">
+                                    <i class="fas fa-star text-amber-400 mr-1"></i>
+                                    <span class="mr-2">4.7</span>
+                                    <i class="fas fa-download text-indigo-400 mr-1"></i>
+                                    <span>1,050+ downloads</span>
+                                </div>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg text-center transition">
+                                        Comprar
+                                    </a>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-indigo-400 rounded-lg transition">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Plugin 4 -->
+                        <div class="plugin-card rounded-xl overflow-hidden hover:shadow-indigo-500/20 transition">
+                            <div class="relative h-48 bg-gradient-to-r from-amber-900 to-yellow-900 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-black opacity-40"></div>
+                                <img src="https://img.itch.zone/aW1nLzY0MDU4MTMucG5n/original/helter.png" alt="Dynamic Lights" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="relative z-10 text-center p-4">
+                                    <span class="bg-yellow-600 text-white text-xs font-semibold px-3 py-1 rounded-full">GRATUITO</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-xl font-bold text-white">Gabe MZ - Basic Lighting</h3>
+                                    <span class="bg-slate-700 text-green-400 text-sm font-semibold px-2 py-1 rounded">FREE</span>
+                                </div>
+                                <p class="text-slate-400 mb-4">Sistema básico de iluminação com fontes de luz estáticas e sombras simples.</p>
+                                <div class="flex items-center text-sm text-slate-400 mb-4">
+                                    <i class="fas fa-star text-amber-400 mr-1"></i>
+                                    <span class="mr-2">4.5</span>
+                                    <i class="fas fa-download text-indigo-400 mr-1"></i>
+                                    <span>2,450+ downloads</span>
+                                </div>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg text-center transition">
+                                        Baixar
+                                    </a>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-indigo-400 rounded-lg transition">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Plugin 5 -->
+                        <div class="plugin-card rounded-xl overflow-hidden hover:shadow-indigo-500/20 transition">
+                            <div class="relative h-48 bg-gradient-to-r from-emerald-900 to-green-900 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-black opacity-40"></div>
+                                <img src="https://img.itch.zone/aW1nLzQxODQwNDIucG5n/original/uic97B.png" alt="Battle System" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="relative z-10 text-center p-4">
+                                    <span class="bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full">PROMOÇÃO</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-xl font-bold text-white">Gabe MV - Chain Skills</h3>
+                                    <div>
+                                        <span class="line-through text-slate-500 text-sm mr-2">R$ 39,90</span>
+                                        <span class="bg-slate-700 text-amber-400 text-sm font-semibold px-2 py-1 rounded">R$ 29,90</span>
+                                    </div>
+                                </div>
+                                <p class="text-slate-400 mb-4">Sistema de combos e habilidades encadeadas com efeitos visuais personalizáveis.</p>
+                                <div class="flex items-center text-sm text-slate-400 mb-4">
+                                    <i class="fas fa-star text-amber-400 mr-1"></i>
+                                    <span class="mr-2">4.6</span>
+                                    <i class="fas fa-download text-indigo-400 mr-1"></i>
+                                    <span>980+ downloads</span>
+                                </div>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg text-center transition">
+                                        Comprar
+                                    </a>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-indigo-400 rounded-lg transition">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Plugin 6 -->
+                        <div class="plugin-card rounded-xl overflow-hidden hover:shadow-indigo-500/20 transition">
+                            <div class="relative h-48 bg-gradient-to-r from-rose-900 to-red-900 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-black opacity-40"></div>
+                                <img src="https://img.itch.zone/aW1nLzY0MDU3MjQucG5n/original/Ev679K.png" alt="Quest Log" class="absolute inset-0 w-full h-full object-cover">
+                                <div class="relative z-10 text-center p-4">
+                                    <span class="bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full">DESTAQUE</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-xl font-bold text-white">Gabe MZ - Advanced Weather</h3>
+                                    <span class="bg-slate-700 text-amber-400 text-sm font-semibold px-2 py-1 rounded">R$ 59,90</span>
+                                </div>
+                                <p class="text-slate-400 mb-4">Sistema meteorológico avançado com transições suaves e efeitos de partículas.</p>
+                                <div class="flex items-center text-sm text-slate-400 mb-4">
+                                    <i class="fas fa-star text-amber-400 mr-1"></i>
+                                    <span class="mr-2">4.9</span>
+                                    <i class="fas fa-download text-indigo-400 mr-1"></i>
+                                    <span>1,780+ downloads</span>
+                                </div>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg text-center transition">
+                                        Comprar
+                                    </a>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-indigo-400 rounded-lg transition">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="mt-12 flex justify-center">
+                        <nav class="inline-flex rounded-md shadow-sm">
+                            <a href="#" class="pagination-link px-4 py-2 rounded-l-lg border border-slate-700 text-slate-300">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                            <a href="#" class="pagination-link px-4 py-2 border-t border-b border-slate-700 text-slate-300 active">
+                                1
+                            </a>
+                            <a href="#" class="pagination-link px-4 py-2 border-t border-b border-slate-700 text-slate-300">
+                                2
+                            </a>
+                            <a href="#" class="pagination-link px-4 py-2 border-t border-b border-slate-700 text-slate-300">
+                                3
+                            </a>
+                            <span class="px-4 py-2 border-t border-b border-slate-700 text-slate-500">
+                                ...
+                            </span>
+                            <a href="#" class="pagination-link px-4 py-2 border-t border-b border-slate-700 text-slate-300">
+                                8
+                            </a>
+                            <a href="#" class="pagination-link px-4 py-2 rounded-r-lg border border-slate-700 text-slate-300">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gradient-to-r from-indigo-900 to-purple-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4 text-white">
+                    Quer <span class="text-amber-300">plugins gratuitos</span>?
+                </h2>
+                <p class="text-lg text-indigo-200 mb-8">
+                    Assine nossa newsletter e receba plugins gratuitos, descontos exclusivos e tutoriais avançados diretamente em seu e-mail.
+                </p>
+                
+                <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                    <input type="email" placeholder="Seu melhor e-mail" class="flex-grow px-5 py-3 rounded-lg bg-indigo-800 bg-opacity-50 border border-indigo-700 text-white placeholder-indigo-400 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                    <button type="submit" class="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-lg transition">
+                        Assinar <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-16 pb-8 border-t border-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center mr-2">
+                            <i class="fas fa-dice-d20 text-white text-sm"></i>
+                        </div>
+                        Gabe Plugins
+                    </h3>
+                    <p class="text-slate-400 mb-4">
+                        Plugins premium de alta qualidade para RPG Maker MV/MZ, criados com paixão para desenvolvedores criativos.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                            <i class="fab fa-discord text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Início</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Plugins</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Tutoriais</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Documentação</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Suporte</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Categorias</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Sistemas de Batalha</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Sistemas de Quest</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Efeitos Visuais</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Gerenciamento de Party</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-indigo-400 transition">Ferramentas para Mapas</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contato</h3>
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-indigo-400 mt-1 mr-3"></i>
+                            <span>contato@gabeplugins.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe text-indigo-400 mt-1 mr-3"></i>
+                            <span>www.gabeplugins.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-headset text-indigo-400 mt-1 mr-3"></i>
+                            <span>Suporte via Discord</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-500 text-sm mb-4 md:mb-0">
+                    &copy; 2023 Gabe Plugins. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-slate-500 hover:text-indigo-400 text-sm transition">Termos de Serviço</a>
+                    <a href="#" class="text-slate-500 hover:text-indigo-400 text-sm transition">Política de Privacidade</a>
+                    <a href="#" class="text-slate-500 hover:text-indigo-400 text-sm transition">Licenças</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for mobile menu toggle (would be expanded in a real implementation)
+        document.querySelector('button').addEventListener('click', function() {
+            alert('Menu mobile seria aberto aqui em uma implementação completa.');
+        });
+        
+        // Category filter toggle
+        document.querySelectorAll('.category-filter').forEach(filter => {
+            filter.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.category-filter').forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // Pagination interaction
+        document.querySelectorAll('.pagination-link:not(.active)').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.pagination-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
